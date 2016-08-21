@@ -15,4 +15,6 @@ public interface PersonService {
     Person findByAddressAndName(String name, String address);
 
     Person withNameAndAddressQuery(String name, String address);
+
+    Person withNameAndAddressNamedQuery(String name, String address);
 }

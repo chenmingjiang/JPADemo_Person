@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 @Entity(name = "Person")
 @Table(name = "Person")
-//@NamedQuery(name = "Person.withNameAndAddressNamedQuery", query = "select p from Person p where p.name=?1 and address=?2")
+@NamedQuery(name = "Person.withNameAndAddressNamedQuery", query = "select p from Person p where p.name=?1 and address=?2")
 public class Person {
     @Id //2
     @GeneratedValue //3

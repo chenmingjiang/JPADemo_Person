@@ -37,4 +37,9 @@ public class PersonServiceImpl implements PersonService {
     public Person withNameAndAddressQuery(String name, String address) {
         return personRepository.withNameAndAddressQuery(name, address);
     }
+
+    @Override
+    public Person withNameAndAddressNamedQuery(String name, String address) {
+        return personRepository.withNameAndAddressNamedQuery(name, address);
+    }
 }

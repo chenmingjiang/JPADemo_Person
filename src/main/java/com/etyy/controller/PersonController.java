@@ -62,4 +62,16 @@ public class PersonController {
     public Person withNameAndAddressQuery(String name, String address) {
         return personService.withNameAndAddressQuery(name, address);
     }
+
+    /***
+     * url: http://127.0.0.1/findByAddressAndName?name=cmj&address=xi'an
+     * 通过Enitty对象上的Quersy名称，查询dao层的方法
+     * @param name
+     * @param address
+     * @return
+     */
+    @RequestMapping(value = "/withNameAndAddressNamedQuery")
+    public Person withNameAndAddressNamedQuery(String name, String address) {
+        return personService.withNameAndAddressNamedQuery(name, address);
+    }
 }
