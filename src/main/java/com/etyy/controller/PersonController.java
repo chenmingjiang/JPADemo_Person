@@ -51,4 +51,15 @@ public class PersonController {
     public Person findByAddressAndName(String name, String address) {
         return personService.findByAddressAndName(address, name);
     }
+
+    /***
+     * url: http://127.0.0.1/findByAddressAndName?name=cmj&address=xi'an
+     * @param name
+     * @param address
+     * @return
+     */
+    @RequestMapping(value = "/withNameAndAddressQuery")
+    public Person withNameAndAddressQuery(String name, String address) {
+        return personService.withNameAndAddressQuery(name, address);
+    }
 }

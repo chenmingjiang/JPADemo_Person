@@ -12,6 +12,7 @@ import java.util.List;
  */
 @Service
 public class PersonServiceImpl implements PersonService {
+
     @Autowired
     PersonRepository personRepository;
 
@@ -30,5 +31,10 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public Person findByAddressAndName(String name, String address) {
         return personRepository.findByAddressAndName(name, address);
+    }
+
+    @Override
+    public Person withNameAndAddressQuery(String name, String address) {
+        return personRepository.withNameAndAddressQuery(name, address);
     }
 }

@@ -13,4 +13,6 @@ public interface PersonService {
     List<Person> findByAddress(String address);
 
     Person findByAddressAndName(String name, String address);
+
+    Person withNameAndAddressQuery(String name, String address);
 }
