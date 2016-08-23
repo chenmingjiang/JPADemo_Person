@@ -3,6 +3,7 @@ package com.etyy.service;
 import com.etyy.entity.Person;
 import com.etyy.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -42,4 +43,11 @@ public class PersonServiceImpl implements PersonService {
     public Person withNameAndAddressNamedQuery(String name, String address) {
         return personRepository.withNameAndAddressNamedQuery(name, address);
     }
+
+    @Override
+    public Iterable<Person> findAll() {
+        Iterable<Person> personIterator = personRepository.findAll(new Sort(Sort.Direction.ASC,"age"));
+        return personIterator;
+    }
+
 }

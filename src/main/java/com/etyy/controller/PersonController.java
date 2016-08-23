@@ -91,4 +91,14 @@ public class PersonController {
     public Person withNameAndAddressNamedQuery(String name, String address) {
         return personService.withNameAndAddressNamedQuery(name, address);
     }
+
+    /***
+     * http://127.0.0.1//sort
+     * 排序查询
+     * @return
+     */
+    @RequestMapping(value = "/sort")
+    public Iterable<Person> sort(){
+        return personService.findAll();
+    }
 }

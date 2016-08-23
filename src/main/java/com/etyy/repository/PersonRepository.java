@@ -1,8 +1,9 @@
 package com.etyy.repository;
 
 import com.etyy.entity.Person;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 /**
  * Created by chenmingjiang on 2016/8/21.
  */
-public interface PersonRepository extends JpaRepository<Person, Long> {
+public interface PersonRepository extends CrudRepository<Person, Long> {
 
     List<Person> findByAddress(String person);
 
@@ -22,4 +23,5 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
     Person withNameAndAddressNamedQuery(String name, String address);
 
 
+    Iterable<Person> findAll(Sort age);
 }

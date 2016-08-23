@@ -17,4 +17,7 @@ public interface PersonService {
     Person withNameAndAddressQuery(String name, String address);
 
     Person withNameAndAddressNamedQuery(String name, String address);
+
+    Iterable<Person> findAll();
+
 }
