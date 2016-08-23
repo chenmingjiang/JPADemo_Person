@@ -1,6 +1,7 @@
 package com.etyy.service;
 
 import com.etyy.entity.Person;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -19,5 +20,7 @@ public interface PersonService {
     Person withNameAndAddressNamedQuery(String name, String address);
 
     Iterable<Person> findAll();
+
+    public Page<Person> page(int page);
 
 }

@@ -3,6 +3,7 @@ package com.etyy.controller;
 import com.etyy.entity.Person;
 import com.etyy.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -100,5 +101,10 @@ public class PersonController {
     @RequestMapping(value = "/sort")
     public Iterable<Person> sort(){
         return personService.findAll();
+    }
+
+    @RequestMapping(value = "/page")
+    public Page<Person> byPage(Integer page){
+        return personService.page(page);
     }
 }
