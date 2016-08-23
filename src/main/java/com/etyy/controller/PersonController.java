@@ -17,6 +17,23 @@ public class PersonController {
     @Autowired
     PersonService personService;
 
+    @RequestMapping(value = "/install")
+    public String insertPerson(){
+        Person person1=new Person(null,"chenmingjiang",33,"xi'an");
+        Person person2=new Person(null,"hechen",18,"xi'an");
+        Person person3=new Person(null,"dongshuyue",30,"xi'an");
+        Person person4=new Person(null,"lumeng",33,"beijing");
+        Person person5=new Person(null,"liuwu",28,"xi'an");
+        Person person6=new Person(null,"zhaona",18,"xi'an");
+        personService.save(person1);
+        personService.save(person2);
+        personService.save(person3);
+        personService.save(person4);
+        personService.save(person5);
+        personService.save(person6);
+        return "install ok";
+    }
+
     /***
      * url: http://127.0.0.1/save?address=xi'an&name=cmj%age=20
      * @param name
