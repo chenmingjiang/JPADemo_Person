@@ -30,8 +30,8 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public List<Person> findByAddress(String address) {
-        List<Person> persons = personRepository.findByAddress(address);
-        return persons;
+        List<Person> personEntities = personRepository.findByAddress(address);
+        return personEntities;
     }
 
     @Override
